@@ -17,7 +17,7 @@ const server = app.listen(PORT, () => {
 const io = require("socket.io")(server, {
   pingTimeOut: 60000,
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://talk-a-tive-f2ue.onrender.com",
   },
 });
 io.on("connection", (socket) => {
