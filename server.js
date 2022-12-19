@@ -9,7 +9,9 @@ require("./startup/routes")(app);
 
 app.use(notFound);
 app.use(errorHandler);
-
+app.get("/",(req,res)=>{
+  res.send("api is running successfully")
+})
 const PORT = process.env.PORT || 5000;
 const server = app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`.yellow.bold);
