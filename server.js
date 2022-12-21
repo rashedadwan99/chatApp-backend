@@ -7,7 +7,7 @@ const app = express();
 require("./startup/db")();
 require("./startup/cors")(app)
 require("./startup/routes")(app);
-const path = require("path")
+
 app.use(notFound);
 app.use(errorHandler);
 
