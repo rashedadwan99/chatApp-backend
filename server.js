@@ -19,7 +19,7 @@ const server = app.listen(PORT, () => {
 const io = require("socket.io")(server, {
   pingTimeOut: 60000,
   cors: {
-    origin: process.env.ClIENT_SIDE,
+    origin: process.env.CLIENT_SIDE,
   },
 });
 io.on("connection", (socket) => {
