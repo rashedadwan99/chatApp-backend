@@ -5,7 +5,7 @@ const { notFound, errorHandler } = require("./middlewares/errorMiddleware");
 require("colors");
 const app = express();
 require("./startup/db")();
-require("./startup/cors")(app)
+require("./startup/cors")(app);
 require("./startup/routes")(app);
 
 app.use(notFound);
@@ -18,7 +18,7 @@ const server = app.listen(PORT, () => {
 const io = require("socket.io")(server, {
   pingTimeOut: 60000,
   cors: {
-    origin: "https://talk-a-tive-f2ue.onrender.com",
+    origin: process.env.ClIENT_SIDE,
   },
 });
 io.on("connection", (socket) => {
